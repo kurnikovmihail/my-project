@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE = "http://109.73.206.144:6969/api";
+const API_BASE = 'https://my-project-production-63d9.up.railway.app/api';
 const API_KEY = "E6kUTYrYwZq2tN4QEtyzsbEBk3ie";
 
 export default async function handler(req, res) {
