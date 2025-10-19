@@ -1,4 +1,5 @@
 import express from 'express';
+import path from 'path';
 import fetch from 'node-fetch';
 import cors from 'cors';
 
@@ -22,6 +23,14 @@ app.get('/api/:endpoint', async (req, res) => {
   } catch (e) {
     res.status(500).json({ error: e.message });
   }
+});
+
+// Указываем папку для статических файлов
+app.use(express.static(path.join(__dirname, 'dist')));
+
+// Все остальные запросы перенаправляем на index.html
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
 // Запуск на порту 8080
