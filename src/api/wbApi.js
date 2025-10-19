@@ -13,7 +13,7 @@ const fetchData = async (endpoint, params = {}) => {
   return response.data;
 };
 
-export const getIncomes = (params) => axios.get('/api/proxy/incomes', { params }).then(r => r.data);
-export const getOrders = (params) => axios.get('/api/proxy/orders', { params }).then(r => r.data);
-export const getSales = (params) => axios.get('/api/proxy/sales', { params }).then(r => r.data);
-export const getStocks = (params) => axios.get('/api/proxy/stocks', { params }).then(r => r.data);
+export const getIncomes = (params) => fetchData('incomes', params);
+export const getOrders = (params) => fetchData('orders', params);
+export const getSales = (params) => fetchData('sales', params);
+export const getStocks = (params) => fetchData('stocks', params);

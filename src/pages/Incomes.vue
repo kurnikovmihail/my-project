@@ -230,6 +230,7 @@ onMounted(async () => {
     updateChart();
   } catch (e) {
     error.value = "Ошибка при загрузке данных";
+    console.error("Proxy error:", error.response?.status, error.message);
   } finally {
     loading.value = false;
   }
